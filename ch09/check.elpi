@@ -1,0 +1,45 @@
+% Chapter 9: a little language, its types, and a type checker
+% in seven clauses.
+
+% ANCHOR: tm
+kind tm type.
+type num int -> tm.
+type tt, ff tm.
+type add tm -> tm -> tm.
+type if tm -> tm -> tm -> tm.
+type lam (tm -> tm) -> tm.
+type app tm -> tm -> tm.
+% ANCHOR_END: tm
+
+% ANCHOR: ty
+kind ty type.
+type nat, bool ty.
+type arr ty -> ty -> ty.
+% ANCHOR_END: ty
+
+% ANCHOR: rules
+% ANCHOR: of
+pred of i:tm, o:ty.
+% ANCHOR_END: of
+% ANCHOR: num
+of (num _) nat.
+% ANCHOR_END: num
+% ANCHOR: bool
+of tt bool.
+of ff bool.
+% ANCHOR_END: bool
+% ANCHOR: add
+of (add M N) nat :- of M nat, of N nat.
+% ANCHOR_END: add
+% ANCHOR: if
+of (if C M N) A :-
+  of C bool, of M A, of N A.
+% ANCHOR_END: if
+% ANCHOR: lam
+of (lam F) (arr A B) :-
+  pi x\ of x A => of (F x) B.
+% ANCHOR_END: lam
+% ANCHOR: app
+of (app M N) B :- of M (arr A B), of N A.
+% ANCHOR_END: app
+% ANCHOR_END: rules

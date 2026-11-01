@@ -1,0 +1,19 @@
+% expect: fail
+% fuel: 2000
+% Chapter 2: the way out first, the recursive call still first
+% in the body. True questions work; a false one never ends.
+accumulate pond.
+
+% ANCHOR: above
+pred above o:critter, o:critter.
+above X Y :- eats X Y.
+above X Z :- above X Y, eats Y Z.
+% ANCHOR_END: above
+
+% ANCHOR: main
+main :-
+  above heron algae,
+  print "the heron is above the algae",
+  above algae fly,
+  print "the algae is above the fly".
+% ANCHOR_END: main

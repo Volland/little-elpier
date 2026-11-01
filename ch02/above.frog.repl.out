@@ -1,0 +1,10 @@
+?- Success:
+  W = fly
+More? (y/N) Success:
+  W = snail
+More? (y/N) Success:
+  W = algae
+More? (y/N) Success:
+  W = algae
+More? (y/N) No more solutions
+?- 

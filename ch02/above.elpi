@@ -1,0 +1,14 @@
+% Chapter 2: above, a rule that uses itself.
+accumulate pond.
+
+% ANCHOR: above
+pred above o:critter, o:critter.
+above X Y :- eats X Y.
+above X Z :- eats X Y, above Y Z.
+% ANCHOR_END: above
+
+% ANCHOR: main
+main :-
+  above heron algae,
+  print "the heron is above the algae".
+% ANCHOR_END: main

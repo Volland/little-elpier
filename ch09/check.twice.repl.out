@@ -1,0 +1,3 @@
+?- Success:
+  T = arr (arr X0 X0) (arr X0 X0)
+More? (y/N) ?- 

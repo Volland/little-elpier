@@ -1,0 +1,11 @@
+?- Success:
+  X = heron
+  Y = frog
+More? (y/N) Success:
+  X = heron
+  Y = fish
+More? (y/N) Success:
+  X = otter
+  Y = fish
+More? (y/N) No more solutions
+?- 

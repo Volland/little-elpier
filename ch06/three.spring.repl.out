@@ -1,0 +1,10 @@
+?- Success:
+  P = brook
+More? (y/N) Success:
+  P = pond
+More? (y/N) Success:
+  P = river
+More? (y/N) Success:
+  P = sea
+More? (y/N) No more solutions
+?- 

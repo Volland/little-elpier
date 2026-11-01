@@ -1,0 +1,18 @@
+% Chapter 7: a little expression language whose let uses a
+% lambda for its body (higher-order abstract syntax).
+
+% ANCHOR: decls
+kind expr type.
+type num int -> expr.
+type add expr -> expr -> expr.
+type let expr -> (expr -> expr) -> expr.
+pred eval i:expr, o:int.
+% ANCHOR_END: decls
+
+% ANCHOR: eval
+eval (num N) N.
+eval (add A B) V :-
+  eval A X, eval B Y, V is X + Y.
+eval (let E B) V :-
+  eval E X, eval (B (num X)) V.
+% ANCHOR_END: eval

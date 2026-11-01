@@ -1,0 +1,10 @@
+% Chapter 7: running the expression language.
+accumulate expr.
+
+% ANCHOR: main
+main :-
+  eval (add (num 2) (num 3)) A, print A,
+  eval (let (num 2) (x\ add x x)) B, print B,
+  eval (let (num 3) (x\ let (add x x)
+         (y\ add y x))) C, print C.
+% ANCHOR_END: main

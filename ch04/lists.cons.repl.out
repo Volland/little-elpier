@@ -1,0 +1,4 @@
+?- Success:
+  H = frog
+  T = [fish]
+More? (y/N) ?- 

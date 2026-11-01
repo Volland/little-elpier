@@ -1,0 +1,14 @@
+?- Success:
+  A = []
+  B = [a, b, c]
+More? (y/N) Success:
+  A = [a]
+  B = [b, c]
+More? (y/N) Success:
+  A = [a, b]
+  B = [c]
+More? (y/N) Success:
+  A = [a, b, c]
+  B = []
+More? (y/N) No more solutions
+?- 

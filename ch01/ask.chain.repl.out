@@ -1,0 +1,14 @@
+?- Success:
+  X = frog
+  Y = fly
+More? (y/N) Success:
+  X = frog
+  Y = snail
+More? (y/N) Success:
+  X = fish
+  Y = fly
+More? (y/N) Success:
+  X = fish
+  Y = snail
+More? (y/N) No more solutions
+?- 

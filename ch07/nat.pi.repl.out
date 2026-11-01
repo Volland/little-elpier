@@ -1,0 +1,3 @@
+?- Success:
+  F = c0 \ s (s c0)
+More? (y/N) ?- 

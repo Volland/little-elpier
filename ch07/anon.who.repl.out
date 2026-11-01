@@ -1,0 +1,8 @@
+?- Success:
+  F = c0 \ eats c0 fly
+  Y = frog
+More? (y/N) Success:
+  F = c0 \ eats c0 fly
+  Y = fish
+More? (y/N) No more solutions
+?- 

@@ -1,0 +1,7 @@
+% expect: fail
+% Chapter 5: a fact with one argument too few.
+accumulate pond.
+
+% ANCHOR: bad
+eats frog.
+% ANCHOR_END: bad

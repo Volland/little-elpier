@@ -1,0 +1,8 @@
+% Chapter 1: the smallest program that touches the pond.
+accumulate pond.
+
+% ANCHOR: main
+main :-
+  eats frog fly,
+  print "frogs eat flies".
+% ANCHOR_END: main

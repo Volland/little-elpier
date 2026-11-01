@@ -1,0 +1,18 @@
+% Chapter 2: our first rules, built on the pond's facts.
+accumulate pond.
+
+% ANCHOR: grazer
+pred grazer o:critter.
+grazer X :- eats X algae.
+% ANCHOR_END: grazer
+
+% ANCHOR: wet_lunch
+pred wet_lunch o:critter, o:critter.
+wet_lunch X Y :- eats X Y, swims Y.
+% ANCHOR_END: wet_lunch
+
+% ANCHOR: hunter
+pred hunter o:critter.
+hunter X :- eats X frog.
+hunter X :- eats X fish.
+% ANCHOR_END: hunter

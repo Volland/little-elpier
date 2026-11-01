@@ -1,0 +1,2 @@
+let (num 2) B = let (num 2) (x\ add x x),
+  E = B (num 2).

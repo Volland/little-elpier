@@ -1,0 +1,42 @@
+% The Little Elpier: the pond. Who lives here, and who eats whom.
+% Every chapter accumulates this file. Chapter 5 explains the
+% `kind`, `type` and `pred` lines; until then, read past them.
+
+% ANCHOR: kinds
+kind critter type.
+% ANCHOR_END: kinds
+
+% ANCHOR: critters
+type algae, fly, snail, frog, fish, heron, duck, otter critter.
+% ANCHOR_END: critters
+
+% ANCHOR: eats
+pred eats o:critter, o:critter.
+eats snail algae.
+eats fly   algae.
+eats frog  fly.
+eats frog  snail.
+eats fish  fly.
+eats fish  snail.
+eats duck  snail.
+eats duck  algae.
+eats heron frog.
+eats heron fish.
+eats otter fish.
+% ANCHOR_END: eats
+
+% ANCHOR: habits
+pred swims o:critter.
+swims frog.
+swims fish.
+swims duck.
+swims otter.
+
+pred flies o:critter.
+flies fly.
+flies heron.
+flies duck.
+
+pred plant o:critter.
+plant algae.
+% ANCHOR_END: habits

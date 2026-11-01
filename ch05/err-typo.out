@@ -1,0 +1,2 @@
+err-typo.elpi:6:10: undeclared constant 'flie'
+hint: if this is a builtin registered by a Lean module, run with --lean-env MODULE

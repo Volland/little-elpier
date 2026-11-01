@@ -1,0 +1,9 @@
+?- Success:
+  X = frog
+More? (y/N) Success:
+  X = snail
+More? (y/N) Success:
+  X = algae
+More? (y/N) Success:
+  X = fly
+More? (y/N) ?- 

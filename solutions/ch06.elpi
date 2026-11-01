@@ -1,0 +1,62 @@
+% Solutions to the Chapter 6 exercises.
+accumulate pond.
+
+% chain, from code/ch06/chain.elpi.
+pred chain i:(A -> A -> prop), o:A, o:A.
+chain R X Y :- R X Y.
+chain R X Z :- R X Y, chain R Y Z.
+
+% ANCHOR: ex1
+% Exercise 6.1: filter the eight critters twice.
+% std.filter keeps the order of the list it is given,
+% so algae comes before snail, although the duck's
+% facts say snail first.
+pred ex1.
+ex1 :-
+  Pond = [algae, fly, snail, frog, fish, heron, duck, otter],
+  std.filter Pond flies A, print A,
+  std.filter Pond (eats duck) B, print B.
+% ANCHOR_END: ex1
+
+% ANCHOR: ex2
+% Exercise 6.2: yes, yes, no, yes. The last one is true
+% because there is nothing in [] to fail: std.forall has
+% a clause for [] with no conditions.
+pred ex2.
+ex2 :-
+  (std.forall [frog, fish] (eats heron), print "yes" ;
+   print "no"),
+  (std.exists [frog, fish] (eats otter), print "yes" ;
+   print "no"),
+  (std.forall [snail, algae, fly] (eats duck), print "yes" ;
+   print "no"),
+  (std.forall [] (eats duck), print "yes" ; print "no").
+% ANCHOR_END: ex2
+
+% ANCHOR: ex3
+% Exercise 6.3: five answers, and the heron twice: once
+% through the frog and once through the fish. chain finds
+% paths, and two paths lead from the fly to the heron.
+pred eaten o:critter, o:critter.
+eaten X Y :- eats Y X.
+
+pred ex3.
+ex3 :- std.findall (chain eaten fly X) L, print L.
+% ANCHOR_END: ex3
+
+% ANCHOR: ex4
+% Exercise 6.4: the first answer is what std.filter gives.
+% Later answers drop items: the third clause may skip an
+% item even when P holds for it.
+pred keep i:list A, i:(A -> prop), o:list A.
+keep [] _ [].
+keep [X|L] P [X|K] :- P X, keep L P K.
+keep [_|L] P K :- keep L P K.
+
+pred ex4.
+ex4 :-
+  std.findall (keep [frog, fly, fish] swims K) Ks,
+  print Ks.
+% ANCHOR_END: ex4
+
+main :- ex1, ex2, ex3, ex4.

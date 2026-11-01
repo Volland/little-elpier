@@ -1,0 +1,4 @@
+?- Success:
+  X = frog
+  Y = fly
+More? (y/N) ?- 

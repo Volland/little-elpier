@@ -1,0 +1,4 @@
+?- Success:
+  F = [a, b]
+More? (y/N) No more solutions
+?- 

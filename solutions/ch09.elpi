@@ -1,0 +1,84 @@
+% Solutions to the Chapter 9 exercises. The checker from
+% code/ch09/check.elpi comes first; each exercise adds to it.
+
+kind tm type.
+type num int -> tm.
+type tt, ff tm.
+type add tm -> tm -> tm.
+type if tm -> tm -> tm -> tm.
+type lam (tm -> tm) -> tm.
+type app tm -> tm -> tm.
+
+kind ty type.
+type nat, bool ty.
+type arr ty -> ty -> ty.
+
+pred of i:tm, o:ty.
+of (num _) nat.
+of tt bool.
+of ff bool.
+of (add M N) nat :- of M nat, of N nat.
+of (if C M N) A :- of C bool, of M A, of N A.
+of (lam F) (arr A B) :- pi x\ of x A => of (F x) B.
+of (app M N) B :- of M (arr A B), of N A.
+
+% Print the type of a term, or "no type".
+pred show i:tm.
+show M :- (of M T, print T ; print "no type").
+
+% ANCHOR: ex1
+% Exercise 9.1: K takes x, then y, and gives back x, so its
+% type is "an X0, then an X1, then an X0 again". S needs x to
+% take two arguments and y to take one; the engine works out
+% that their types must line up.
+pred ex1.
+ex1 :-
+  show (lam x\ lam y\ x),
+  show (lam x\ lam y\ lam z\ app (app x z) (app y z)).
+% ANCHOR_END: ex1
+
+% ANCHOR: ex2
+% Exercise 9.2: `let M F` names M inside F. Its rule is the
+% `lam` rule and the `app` rule in one: check M, then check the
+% body with a fresh x of M's type. The last term fails: f gets
+% ONE type, so it cannot take a bool and a nat. That is the
+% missing polymorphic let.
+type let tm -> (tm -> tm) -> tm.
+of (let M F) B :- of M A, pi x\ of x A => of (F x) B.
+pred ex2.
+ex2 :-
+  show (let (num 2) (x\ add x x)),
+  show (let (lam y\ y) (f\ app f tt)),
+  show (let (lam y\ y) (f\
+          if (app f tt) (app f (num 1)) (num 0))).
+% ANCHOR_END: ex2
+
+% ANCHOR: ex3
+% Exercise 9.3: pairs. `prod A B` is the type of a pair whose
+% first part has type A and second part type B.
+type prod ty -> ty -> ty.
+type pair tm -> tm -> tm.
+type fst, snd tm -> tm.
+of (pair M N) (prod A B) :- of M A, of N B.
+of (fst M) A :- of M (prod A _).
+of (snd M) B :- of M (prod _ B).
+pred ex3.
+ex3 :-
+  show (pair (num 1) tt),
+  show (fst (pair (num 1) tt)),
+  show (lam p\ pair (snd p) (fst p)).
+% ANCHOR_END: ex3
+
+% ANCHOR: ex4
+% Exercise 9.4: in `lam x\ app x x`, x gets one type A. The
+% `app` rule needs the first x to have a type `arr A B`, and
+% the second x to have type A. So A = arr A B: a type that
+% contains itself. That is the occurs check from Chapter 3,
+% and unification fails, so the term has no type.
+pred ex4.
+ex4 :-
+  show (lam x\ app x x),
+  (A = arr A nat, print "A =" A ; print "A = arr A nat fails").
+% ANCHOR_END: ex4
+
+main :- ex1, ex2, ex3, ex4.

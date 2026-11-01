@@ -1,0 +1,4 @@
+?- Success:
+  F = c0 \ c0 + 1
+  Y = 42
+More? (y/N) ?- 

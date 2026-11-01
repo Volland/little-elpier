@@ -1,0 +1,4 @@
+?- Success:
+  F = c0 \ c1 \ s c0
+  G = s z
+More? (y/N) ?- 

@@ -1,0 +1,7 @@
+% Chapter 6: library predicates that take predicates.
+accumulate world.
+
+% ANCHOR: sum
+pred sum i:int, i:int, o:int.
+sum X Acc New :- New is Acc + X.
+% ANCHOR_END: sum

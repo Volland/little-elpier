@@ -1,0 +1,3 @@
+?- Success:
+  L = [frog, fish]
+More? (y/N) ?- 

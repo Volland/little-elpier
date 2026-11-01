@@ -1,0 +1,1 @@
+wrong.elpi:7:25: eats has type critter -> critter -> prop but is used with type critter -> prop

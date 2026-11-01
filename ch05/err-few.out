@@ -1,0 +1,1 @@
+err-few.elpi:6:0: application of eats has type critter -> prop but is used with type prop

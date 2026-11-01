@@ -1,0 +1,22 @@
+% Chapter 4: collect every answer into one list.
+accumulate pond.
+
+% ANCHOR: foods
+pred foods o:list prop, o:list critter.
+foods [] [].
+foods [eats _ X | T] [X | R] :- foods T R.
+% ANCHOR_END: foods
+
+% ANCHOR: menu
+pred menu o:critter, o:list critter.
+menu C L :-
+  std.findall (eats C X) Found,
+  foods Found L.
+% ANCHOR_END: menu
+
+% ANCHOR: main
+main :-
+  menu heron H, print "heron:" H,
+  menu duck D, print "duck:" D,
+  menu algae A, print "algae:" A.
+% ANCHOR_END: main

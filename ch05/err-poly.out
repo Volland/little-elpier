@@ -1,0 +1,2 @@
+err-poly.elpi:6:15: frog has type critter but is used with type int
+err-poly.elpi:6:21: fish has type critter but is used with type int

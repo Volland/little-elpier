@@ -1,0 +1,20 @@
+% Chapter 3: numbers and meals built from terms.
+accumulate pond.
+
+% ANCHOR: nat
+kind nat type.
+type z nat.
+type s nat -> nat.
+% ANCHOR_END: nat
+
+% ANCHOR: tally
+pred tally o:critter, o:nat.
+tally frog (s (s (s z))).
+tally fish (s z).
+tally heron z.
+% ANCHOR_END: tally
+
+% ANCHOR: meal
+kind food type.
+type meal critter -> critter -> food.
+% ANCHOR_END: meal

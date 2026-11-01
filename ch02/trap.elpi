@@ -1,0 +1,16 @@
+% expect: fail
+% fuel: 2000
+% Chapter 2: the recursive call first. The search never ends.
+accumulate pond.
+
+% ANCHOR: above
+pred above o:critter, o:critter.
+above X Z :- above X Y, eats Y Z.
+above X Y :- eats X Y.
+% ANCHOR_END: above
+
+% ANCHOR: main
+main :-
+  above heron algae,
+  print "the heron is above the algae".
+% ANCHOR_END: main

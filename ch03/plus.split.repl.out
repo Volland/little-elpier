@@ -1,0 +1,11 @@
+?- Success:
+  X = z
+  Y = s (s z)
+More? (y/N) Success:
+  X = s z
+  Y = s z
+More? (y/N) Success:
+  X = s (s z)
+  Y = z
+More? (y/N) No more solutions
+?- 

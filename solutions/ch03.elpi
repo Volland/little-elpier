@@ -1,0 +1,63 @@
+% Solutions to the Chapter 3 exercises.
+accumulate pond.
+
+kind nat type.
+type z nat.
+type s nat -> nat.
+kind food type.
+type meal critter -> critter -> food.
+
+pred plus o:nat, o:nat, o:nat.
+plus z N N.
+plus (s M) N (s K) :- plus M N K.
+
+% ANCHOR: ex1
+% Exercise 3.1: three unifications.
+% (a) Y = s X: Y takes the whole of s X, and X stays a hole
+%     (printed X0). (b) X = fly: the first place says X is
+%     fly, and the second place then checks fly = fly. (c) both
+%     are heron: X = Y from the first place, Y = heron from the
+%     second.
+pred ex1.
+ex1 :-
+  (s (s X) = s Y, print "a:" X Y),
+  (meal A fly = meal fly A, print "b:" A),
+  (meal B C = meal C heron, print "c:" B C).
+% ANCHOR_END: ex1
+
+% ANCHOR: ex2
+% Exercise 3.2: double. Backwards, three has no half, so the
+% question fails: no number added to itself makes s (s (s z)).
+pred double o:nat, o:nat.
+double N D :- plus N N D.
+pred ex2.
+ex2 :-
+  double (s (s z)) D, print D,
+  std.findall (double N (s (s (s z)))) A, print A.
+% ANCHOR_END: ex2
+
+% ANCHOR: ex3
+% Exercise 3.3: less. Three numbers are smaller than three.
+pred less o:nat, o:nat.
+less z (s N).
+less (s X) (s Y) :- less X Y.
+pred ex3.
+ex3 :- std.findall (less X (s (s (s z)))) A, print A.
+% ANCHOR_END: ex3
+
+% ANCHOR: ex4
+% Exercise 3.4: times. Forward, 2 x 3 = 6. Backwards it finds
+% X = s (s z) first. Asked for more, it never stops: times tries
+% X = s (s (s z)), then bigger and bigger X, and each product
+% is too big, but nothing tells the search to give up. With
+% --fuel it stops with "resource error: out of fuel".
+pred times o:nat, o:nat, o:nat.
+times z N z.
+times (s M) N K :- times M N P, plus N P K.
+pred ex4.
+ex4 :-
+  times (s (s z)) (s (s (s z))) T, print T,
+  times X (s (s z)) (s (s (s (s z)))), print X.
+% ANCHOR_END: ex4
+
+main :- ex1, ex2, ex3, ex4.

@@ -1,0 +1,9 @@
+?- Success:
+  E = tt
+More? (y/N) Success:
+  E = ff
+More? (y/N) Success:
+  E = if tt tt tt
+More? (y/N) Success:
+  E = if tt tt ff
+More? (y/N) ?- 

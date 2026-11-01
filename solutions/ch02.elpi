@@ -1,0 +1,57 @@
+% Solutions to the Chapter 2 exercises.
+accumulate pond.
+
+pred above o:critter, o:critter.
+above X Y :- eats X Y.
+above X Z :- eats X Y, above Y Z.
+
+% ANCHOR: ex1
+% Exercise 2.1: a swimmer that eats a swimmer.
+% Only the otter: it swims, and it eats the fish, which swims.
+pred swimming_hunter o:critter.
+swimming_hunter X :- swims X, eats X Y, swims Y.
+pred ex1.
+ex1 :- std.findall (swimming_hunter X) A, print A.
+% ANCHOR_END: ex1
+
+% ANCHOR: ex2
+% Exercise 2.2: below is above with the places swapped.
+% Fourteen answers. A critter appears once for every path
+% down to the algae: the heron has four paths, and the frog,
+% the fish, the duck and the otter have two each.
+pred below o:critter, o:critter.
+below X Y :- above Y X.
+pred ex2.
+ex2 :- std.findall (below algae W) A, print A.
+% ANCHOR_END: ex2
+
+% ANCHOR: ex3
+% Exercise 2.3: two critters that eat the same food.
+% The frog is its own rival: nothing in the rule says X and Y
+% must differ, and the frog certainly eats what the frog eats.
+pred rivals o:critter, o:critter.
+rivals X Y :- eats X F, eats Y F.
+pred ex3.
+ex3 :- std.findall (rivals frog W) A, print A.
+% ANCHOR_END: ex3
+
+% ANCHOR: ex4
+% Exercise 2.4: linked follows eats in both directions.
+% `linked frog algae` succeeds: frog to fly to algae.
+% `linked frog otter` is true in the picture (frog, heron, fish,
+% otter), but the engine never says so. It walks frog, fly,
+% algae, snail, algae, snail, ... forever: a step from algae to
+% snail and back does not move toward a way out. With --fuel it
+% stops with "resource error: out of fuel". Chapter 4's lists
+% give a fix: remember where you have been.
+pred connected o:critter, o:critter.
+connected X Y :- eats X Y.
+connected X Y :- eats Y X.
+pred linked o:critter, o:critter.
+linked X Y :- connected X Y.
+linked X Z :- connected X Y, linked Y Z.
+pred ex4.
+ex4 :- linked frog algae, print "linked frog algae".
+% ANCHOR_END: ex4
+
+main :- ex1, ex2, ex3, ex4.

@@ -1,0 +1,7 @@
+?- Success:
+  P = eats heron
+  X = frog
+More? (y/N) Success:
+  P = eats heron
+  X = fish
+More? (y/N) ?- 

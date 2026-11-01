@@ -1,0 +1,74 @@
+% Solutions to the Chapter 5 exercises.
+accumulate pond.
+
+% ANCHOR: ex1
+% Exercise 5.1: `swims heron 2` is turned away: swims
+% takes one critter, and here it is given two
+% arguments. The other two lines are well typed. Both
+% are false: no fact says the otter flies, and nothing
+% in the pond eats itself.
+pred ex1.
+ex1 :-
+  (flies otter, print "flies otter: yes"
+  ; print "flies otter: no"),
+  (eats duck duck, print "eats duck duck: yes"
+  ; print "eats duck duck: no").
+% ANCHOR_END: ex1
+
+% ANCHOR: ex2
+% Exercise 5.2: a new kind with two constants.
+% `size-of frog 3` never runs: the checker reads the
+% whole file first and stops at the 3, an int where a
+% size belongs. No question is asked at all.
+kind size type.
+type small, big size.
+
+pred size-of o:critter, o:size.
+size-of heron big.
+size-of otter big.
+size-of duck big.
+size-of frog small.
+size-of fish small.
+
+pred ex2.
+ex2 :- std.findall (size-of X big) L, print L.
+% ANCHOR_END: ex2
+
+% ANCHOR: ex3
+% Exercise 5.3: A and B are two type variables, so the
+% two lists may hold different types. Declared with
+% `list A, list A`, the call below is turned away:
+% the critters fix A, and 1 and 2 are ints.
+pred same-len o:list A, o:list B.
+same-len [] [].
+same-len [_ | T] [_ | U] :- same-len T U.
+
+pred ex3.
+ex3 :-
+  same-len [frog, fish] [1, 2],
+  print "same length".
+% ANCHOR_END: ex3
+
+% ANCHOR: ex4
+% Exercise 5.4: `eater X frog` succeeds with X = heron.
+% The i: is checked only where the question meets the
+% head. The head `eater X Y` has a fresh variable in
+% the first place, which matches the hole without
+% filling it. Then the body asks `eats X frog`, and eats
+% has o: modes, so unification fills X. `hunter` has
+% the constant heron in its head, and matching cannot
+% fill the caller's hole with it: no answers.
+pred eater i:critter, o:critter.
+eater X Y :- eats X Y.
+
+pred hunter i:critter, o:critter.
+hunter heron frog.
+hunter heron fish.
+
+pred ex4.
+ex4 :-
+  std.findall (eater X frog) E, print E,
+  std.findall (hunter Y frog) H, print H.
+% ANCHOR_END: ex4
+
+main :- ex1, ex2, ex3, ex4.

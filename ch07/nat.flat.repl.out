@@ -1,0 +1,4 @@
+?- Success:
+  F = X0
+ X0 z = s (s z)  /* suspended on X0 */
+More? (y/N) ?- 

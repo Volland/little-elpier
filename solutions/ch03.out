@@ -1,0 +1,8 @@
+a: X0 s X0
+b: fly
+c: heron heron
+s (s (s (s z)))
+[]
+[less z (s (s (s z))), less (s z) (s (s (s z))), less (s (s z)) (s (s (s z)))]
+s (s (s (s (s (s z)))))
+s (s z)

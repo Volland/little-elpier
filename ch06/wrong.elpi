@@ -1,0 +1,8 @@
+% expect: fail
+% Chapter 6: std.filter wants a one-place predicate.
+accumulate pond.
+
+% ANCHOR: main
+main :-
+  std.filter [fly, frog] eats L, print L.
+% ANCHOR_END: main

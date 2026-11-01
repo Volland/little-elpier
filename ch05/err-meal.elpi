@@ -1,0 +1,7 @@
+% expect: fail
+% Chapter 5: a constructor given one argument too few.
+accumulate food.
+
+% ANCHOR: bad
+lunch (meal frog).
+% ANCHOR_END: bad

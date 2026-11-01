@@ -1,0 +1,7 @@
+% expect: fail
+% Chapter 5: a misspelled constant.
+accumulate pond.
+
+% ANCHOR: bad
+eats frog flie.
+% ANCHOR_END: bad

@@ -1,0 +1,4 @@
+% Chapter 7: lambdas over Peano numbers.
+kind nat type.
+type z nat.
+type s nat -> nat.

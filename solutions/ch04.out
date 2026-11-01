@@ -1,0 +1,9 @@
+second: fish
+[heron]: no
+[prefix [] [a, b, c], prefix [a] [a, b, c], prefix [a, b] [a, b, c], 
+ prefix [a, b, c] [a, b, c]]
+duck: 2
+otter: 1
+algae: 0
+[next-to a b [a, b, c], next-to b c [a, b, c]]
+after b: c

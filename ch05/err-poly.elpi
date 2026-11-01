@@ -1,0 +1,7 @@
+% expect: fail
+% Chapter 5: one A cannot be two types at once.
+accumulate poly.
+
+% ANCHOR: bad
+main :- mem 3 [frog, fish].
+% ANCHOR_END: bad

@@ -1,0 +1,2 @@
+std.filter [snail, fly, frog, fish, duck]
+  (eats frog) L.

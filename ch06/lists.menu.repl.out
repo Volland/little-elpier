@@ -1,0 +1,6 @@
+?- Success:
+  L = [frog, fish]
+More? (y/N) Success:
+  L = [fish, fish]
+More? (y/N) No more solutions
+?- 

@@ -1,0 +1,6 @@
+% Chapter 7: the same goal, with the lambda in parentheses.
+accumulate nat.
+
+% ANCHOR: main
+main :- F = (x\ s x), G = F z, print G.
+% ANCHOR_END: main

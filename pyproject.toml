@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "little-elpier"
+version = "0.1.0"
+description = "Companion code for The Little Elpier: the elpier runner and every example"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+dependencies = ["leanelpi>=0.4.1"]
+
+[project.scripts]
+elpier = "elpier:main"
+
+[tool.setuptools]
+py-modules = ["elpier"]

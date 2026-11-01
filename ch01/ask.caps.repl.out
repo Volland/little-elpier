@@ -1,0 +1,4 @@
+?- Success:
+  X = snail
+  Fly = algae
+More? (y/N) ?- 

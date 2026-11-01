@@ -1,0 +1,42 @@
+% Chapter 4: lists, and four relations on them.
+accumulate pond.
+
+% ANCHOR: letters
+kind letter type.
+type a, b, c letter.
+% ANCHOR_END: letters
+
+% ANCHOR: mem
+pred mem o:A, o:list A.
+mem X [X | _].
+mem X [_ | T] :- mem X T.
+% ANCHOR_END: mem
+
+% ANCHOR: append
+pred append o:list A, o:list A, o:list A.
+append [] L L.
+append [H | T] L [H | R] :- append T L R.
+% ANCHOR_END: append
+
+% ANCHOR: append-in
+pred append-in i:list A, i:list A, o:list A.
+append-in [] L L.
+append-in [H | T] L [H | R] :-
+  append-in T L R.
+% ANCHOR_END: append-in
+
+% ANCHOR: len
+pred len o:list A, o:int.
+len [] 0.
+len [_ | T] N :- len T M, N is M + 1.
+% ANCHOR_END: len
+
+% ANCHOR: rev
+pred rev i:list A, o:list A.
+rev L R :- rev-onto L [] R.
+
+pred rev-onto i:list A, i:list A, o:list A.
+rev-onto [] Acc Acc.
+rev-onto [H | T] Acc R :-
+  rev-onto T [H | Acc] R.
+% ANCHOR_END: rev

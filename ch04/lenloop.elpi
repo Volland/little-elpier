@@ -1,0 +1,11 @@
+% expect: fail
+% fuel: 5000
+% Chapter 4: len asked backwards finds one list, then runs on.
+accumulate pond.
+accumulate lists.
+
+% ANCHOR: main
+main :-
+  std.findall (len L 2) All,
+  print All.
+% ANCHOR_END: main

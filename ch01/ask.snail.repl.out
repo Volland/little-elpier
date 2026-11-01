@@ -1,0 +1,8 @@
+?- Success:
+  X = frog
+More? (y/N) Success:
+  X = fish
+More? (y/N) Success:
+  X = duck
+More? (y/N) No more solutions
+?- 

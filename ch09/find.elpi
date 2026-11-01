@@ -1,0 +1,18 @@
+% Chapter 9: the same rules with both arguments open, so the
+% engine can search for terms of a type.
+accumulate check.
+
+% ANCHOR: find
+pred find o:tm, o:ty.
+find (num _) nat.
+find tt bool.
+find ff bool.
+find (lam F) (arr A B) :-
+  pi x\ find x A => find (F x) B.
+find (add M N) nat :-
+  find M nat, find N nat.
+find (if C M N) A :-
+  find C bool, find M A, find N A.
+find (app M N) B :-
+  find M (arr A B), find N A.
+% ANCHOR_END: find

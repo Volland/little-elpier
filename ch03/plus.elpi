@@ -1,0 +1,14 @@
+% Chapter 3: adding Peano numbers with two clauses.
+accumulate terms.
+
+% ANCHOR: plus
+pred plus o:nat, o:nat, o:nat.
+plus z N N.
+plus (s M) N (s K) :- plus M N K.
+% ANCHOR_END: plus
+
+% ANCHOR: main
+main :-
+  plus (s (s z)) (s z) R,
+  print R.
+% ANCHOR_END: main

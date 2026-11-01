@@ -1,0 +1,32 @@
+% Chapter 5: new kinds, constructors with arrows, and prop.
+accumulate pond.
+
+% ANCHOR: nat
+kind nat type.
+type z nat.
+type s nat -> nat.
+% ANCHOR_END: nat
+
+% ANCHOR: meal
+kind food type.
+type meal critter -> critter -> food.
+% ANCHOR_END: meal
+
+% ANCHOR: lunch
+pred lunch o:food.
+lunch (meal frog fly).
+lunch (meal heron fish).
+% ANCHOR_END: lunch
+
+% ANCHOR: grazer
+type grazer critter -> prop.
+grazer X :- eats X algae.
+% ANCHOR_END: grazer
+
+% ANCHOR: diet
+typeabbrev diet (list critter).
+
+pred menu o:critter, o:diet.
+menu heron [frog, fish].
+menu otter [fish].
+% ANCHOR_END: diet

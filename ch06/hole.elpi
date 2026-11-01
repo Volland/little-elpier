@@ -1,0 +1,11 @@
+% expect: fail
+% Chapter 6: chain needs a relation; it cannot invent one.
+accumulate world.
+
+pred chain i:(A -> A -> prop), o:A, o:A.
+chain R X Y :- R X Y.
+chain R X Z :- R X Y, chain R Y Z.
+
+% ANCHOR: main
+main :- chain R heron frog.
+% ANCHOR_END: main

@@ -1,0 +1,10 @@
+?- Success:
+  Y = heron
+More? (y/N) Success:
+  Y = duck
+More? (y/N) Success:
+  Y = frog
+More? (y/N) Success:
+  Y = fish
+More? (y/N) No more solutions
+?- 

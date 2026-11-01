@@ -1,0 +1,3 @@
+?- Success:
+  L = [a, b, c]
+More? (y/N) ?- 

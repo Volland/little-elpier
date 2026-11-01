@@ -1,0 +1,9 @@
+% Chapter 8: the pond with `above`, for questions that suppose
+% a fact (`=>`) or a brand-new critter (`pi`).
+accumulate pond.
+
+% ANCHOR: above
+pred above o:critter, o:critter.
+above X Y :- eats X Y.
+above X Z :- eats X Y, above Y Z.
+% ANCHOR_END: above

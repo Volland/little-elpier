@@ -1,0 +1,6 @@
+?- Success:
+  X = meal frog fly
+More? (y/N) Success:
+  X = meal heron fish
+More? (y/N) No more solutions
+?- 

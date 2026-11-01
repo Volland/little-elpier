@@ -1,0 +1,3 @@
+?- Success:
+  L = [snail, fly]
+More? (y/N) ?- 

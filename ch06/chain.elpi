@@ -1,0 +1,15 @@
+% Chapter 6: one transitive closure for every relation.
+accumulate world.
+
+% ANCHOR: chain
+pred chain i:(A -> A -> prop), o:A, o:A.
+chain R X Y :- R X Y.
+chain R X Z :- R X Y, chain R Y Z.
+% ANCHOR_END: chain
+
+% ANCHOR: main
+main :-
+  std.findall (chain eats heron X) Xs, print Xs,
+  std.findall (chain upstream brook P) Ps, print Ps,
+  std.findall (chain older duck Y) Ys, print Ys.
+% ANCHOR_END: main

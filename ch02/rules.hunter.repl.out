@@ -1,0 +1,8 @@
+?- Success:
+  X = heron
+More? (y/N) Success:
+  X = heron
+More? (y/N) Success:
+  X = otter
+More? (y/N) No more solutions
+?- 

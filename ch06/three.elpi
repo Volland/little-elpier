@@ -1,0 +1,26 @@
+% Chapter 6: the same recursion written three times.
+accumulate world.
+
+% ANCHOR: above
+pred above o:critter, o:critter.
+above X Y :- eats X Y.
+above X Z :- eats X Y, above Y Z.
+% ANCHOR_END: above
+
+% ANCHOR: upriver
+pred upriver o:place, o:place.
+upriver P Q :- upstream P Q.
+upriver P R :- upstream P Q, upriver Q R.
+% ANCHOR_END: upriver
+
+% ANCHOR: elder
+pred elder o:critter, o:critter.
+elder X Y :- older X Y.
+elder X Z :- older X Y, elder Y Z.
+% ANCHOR_END: elder
+
+% ANCHOR: main
+main :-
+  std.findall (upriver spring P) Ps, print Ps,
+  std.findall (elder otter X) Xs, print Xs.
+% ANCHOR_END: main

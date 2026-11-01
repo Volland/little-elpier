@@ -1,0 +1,4 @@
+?- Success:
+  X = X0
+  Y = X0
+More? (y/N) ?- 

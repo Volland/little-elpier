@@ -1,0 +1,7 @@
+% expect: fail
+% Chapter 6: eats heron is a predicate, not a question.
+accumulate pond.
+
+% ANCHOR: main
+main :- eats heron.
+% ANCHOR_END: main

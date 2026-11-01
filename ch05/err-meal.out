@@ -1,0 +1,1 @@
+err-meal.elpi:6:7: application of meal has type critter -> food but is used with type food

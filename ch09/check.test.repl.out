@@ -1,0 +1,3 @@
+?- Success:
+  T = arr bool nat
+More? (y/N) ?- 

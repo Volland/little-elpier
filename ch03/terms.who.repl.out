@@ -1,0 +1,4 @@
+?- Success:
+  X = fish
+More? (y/N) No more solutions
+?- 

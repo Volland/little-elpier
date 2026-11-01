@@ -1,0 +1,4 @@
+?- Success:
+  H = heron
+  T = []
+More? (y/N) ?- 

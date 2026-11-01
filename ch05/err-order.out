@@ -1,0 +1,2 @@
+err-order.elpi:7:5: application of meal has type food but is used with type critter
+err-order.elpi:7:20: frog has type critter but is used with type food

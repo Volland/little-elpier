@@ -1,0 +1,59 @@
+% Solutions to the Chapter 7 exercises.
+accumulate pond.
+
+% From code/ch07/nat.elpi and code/ch07/expr.elpi.
+kind nat type.
+type z nat.
+type s nat -> nat.
+
+kind expr type.
+type num int -> expr.
+type add expr -> expr -> expr.
+type let expr -> (expr -> expr) -> expr.
+pred eval i:expr, o:int.
+eval (num N) N.
+eval (add A B) V :- eval A X, eval B Y, V is X + Y.
+eval (let E B) V :- eval E X, eval (B (num X)) V.
+
+% ANCHOR: ex1
+% Exercise 7.1: two lambdas, no new predicate names.
+pred ex1.
+ex1 :-
+  Pond = [algae, fly, snail, frog, fish, heron, duck, otter],
+  std.filter Pond (x\ eats x snail) A, print A,
+  std.filter Pond (x\ eats duck x) B, print B.
+% ANCHOR_END: ex1
+
+% ANCHOR: ex2
+% Exercise 7.2: F adds one s each time it is applied, so
+% three applications give three. K throws its first
+% argument away and returns its second.
+pred ex2.
+ex2 :-
+  F = (x\ s x), G = F (F (F z)), print G,
+  K = (x\ y\ y), H = K z (s z), print H.
+% ANCHOR_END: ex2
+
+% ANCHOR: ex3
+% Exercise 7.3: let x = 4 in (let y = x + 1 in y + y).
+% x is 4, y is 5, and y + y is 10.
+pred ex3.
+ex3 :-
+  E = let (num 4) (x\ let (add x (num 1)) (y\ add y y)),
+  eval E V, print V.
+% ANCHOR_END: ex3
+
+% ANCHOR: ex4
+% Exercise 7.4: twice puts F around X two times. The
+% engine applies the lambda, so E is the expression with
+% both holes filled, and it evaluates to 4.
+pred twice i:(A -> A), i:A, o:A.
+twice F X (F (F X)).
+
+pred ex4.
+ex4 :-
+  twice (x\ add x x) (num 1) E, print E,
+  eval E V, print V.
+% ANCHOR_END: ex4
+
+main :- ex1, ex2, ex3, ex4.

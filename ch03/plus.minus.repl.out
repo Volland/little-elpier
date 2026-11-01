@@ -1,0 +1,4 @@
+?- Success:
+  X = s (s z)
+More? (y/N) No more solutions
+?- 

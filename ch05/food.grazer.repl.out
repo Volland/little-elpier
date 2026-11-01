@@ -1,0 +1,8 @@
+?- Success:
+  X = snail
+More? (y/N) Success:
+  X = fly
+More? (y/N) Success:
+  X = duck
+More? (y/N) No more solutions
+?- 

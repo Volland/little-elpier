@@ -1,0 +1,8 @@
+% Chapter 5: one mem for every type, with input modes.
+accumulate pond.
+
+% ANCHOR: mem
+pred mem i:A, i:list A.
+mem X [X | _].
+mem X [_ | T] :- mem X T.
+% ANCHOR_END: mem

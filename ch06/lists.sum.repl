@@ -1,0 +1,1 @@
+std.fold [4, 2, 6] 0 sum S.

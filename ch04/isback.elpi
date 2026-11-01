@@ -1,0 +1,7 @@
+% expect: fail
+% Chapter 4: is computes its right side; it cannot solve for X.
+accumulate pond.
+
+% ANCHOR: main
+main :- 5 is X + 3, print X.
+% ANCHOR_END: main

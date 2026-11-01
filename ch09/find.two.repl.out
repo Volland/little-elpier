@@ -1,0 +1,5 @@
+?- Success:
+  E = lam c0 \ lam c1 \ c1
+More? (y/N) Success:
+  E = lam c0 \ lam c1 \ c0
+More? (y/N) ?- 

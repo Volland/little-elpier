@@ -1,0 +1,3 @@
+?- Success:
+  N = s (s (s z))
+More? (y/N) ?- 

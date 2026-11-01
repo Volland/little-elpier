@@ -1,0 +1,10 @@
+arr X0 (arr X1 X0)
+arr (arr X2 (arr X3 X4)) (arr (arr X2 X3) (arr X2 X4))
+nat
+bool
+no type
+prod nat bool
+nat
+arr (prod X5 X6) (prod X6 X5)
+no type
+A = arr A nat fails

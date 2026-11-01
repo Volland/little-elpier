@@ -1,0 +1,6 @@
+[eats duck snail, eats duck algae]
+[eats snail algae, eats fly algae, eats duck algae]
+[(swims duck , flies duck)]
+[(eats frog fly , eats fly algae), (eats frog snail , eats snail algae), 
+ (eats fish fly , eats fly algae), (eats fish snail , eats snail algae), 
+ (eats duck snail , eats snail algae)]

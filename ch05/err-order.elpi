@@ -1,0 +1,8 @@
+% expect: fail
+% Chapter 5: two arguments of different kinds, swapped.
+accumulate food.
+
+% ANCHOR: bad
+pred ate o:critter, o:food.
+ate (meal frog fly) frog.
+% ANCHOR_END: bad

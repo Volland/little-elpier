@@ -1,0 +1,35 @@
+% Chapter 8: the size of a Chapter 7 expression, walking under
+% the `let` binder with `pi` and `=>`.
+
+% ANCHOR: expr
+kind expr type.
+type num int -> expr.
+type add expr -> expr -> expr.
+type let expr -> (expr -> expr) -> expr.
+% ANCHOR_END: expr
+
+% ANCHOR: size
+% ANCHOR: size-easy
+pred size i:expr, o:int.
+size (num _) 1.
+size (add A B) N :-
+  size A NA, size B NB, N is NA + NB + 1.
+% ANCHOR_END: size-easy
+% ANCHOR: size-let
+size (let E B) N :-
+  size E NE,
+  (pi x\ size x 1 => size (B x) NB),
+  N is NE + NB + 1.
+% ANCHOR_END: size-let
+% ANCHOR_END: size
+
+% ANCHOR: main
+main :-
+  size (num 7) A, print A,
+  size (add (num 1) (num 2)) B, print B,
+  size (let (num 2) (x\ add x x)) C,
+  print C,
+  size (let (num 2) (x\
+          let (add x x) (y\ add y x))) D,
+  print D.
+% ANCHOR_END: main

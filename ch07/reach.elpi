@@ -1,0 +1,7 @@
+% expect: fail
+% Chapter 7: the lambda reaches right and swallows the rest.
+accumulate nat.
+
+% ANCHOR: main
+main :- F = x\ s x, G = F z, print G.
+% ANCHOR_END: main

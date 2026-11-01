@@ -1,0 +1,38 @@
+% Chapter 6: two more relations, and the critters' legs.
+% Kept out of pond.elpi; the chapter's other files load it.
+accumulate pond.
+
+% ANCHOR: places
+kind place type.
+type spring, brook, pond, river, sea place.
+% ANCHOR_END: places
+
+% ANCHOR: upstream
+% upstream P Q: water runs from P into Q.
+pred upstream o:place, o:place.
+upstream spring brook.
+upstream brook  pond.
+upstream pond   river.
+upstream river  sea.
+% ANCHOR_END: upstream
+
+% ANCHOR: older
+% older X Y: X is next older than Y.
+pred older o:critter, o:critter.
+older otter heron.
+older heron duck.
+older duck  frog.
+older frog  fish.
+% ANCHOR_END: older
+
+% ANCHOR: legs
+pred legs o:critter, o:int.
+legs algae 0.
+legs fly   6.
+legs snail 0.
+legs frog  4.
+legs fish  0.
+legs heron 2.
+legs duck  2.
+legs otter 4.
+% ANCHOR_END: legs

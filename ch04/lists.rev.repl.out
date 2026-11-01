@@ -1,0 +1,3 @@
+?- Success:
+  R = [c, b, a]
+More? (y/N) ?- 

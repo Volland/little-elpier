@@ -1,0 +1,4 @@
+?- Success:
+  B = c0 \ add c0 c0
+  E = add (num 2) (num 2)
+More? (y/N) ?- 

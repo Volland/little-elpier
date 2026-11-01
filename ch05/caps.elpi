@@ -1,0 +1,12 @@
+% Chapter 5: a capital letter the checker cannot catch.
+accumulate pond.
+
+% ANCHOR: caps
+eats Frog fly.
+% ANCHOR_END: caps
+
+% ANCHOR: main
+main :-
+  eats otter fly,
+  print "the otter eats flies".
+% ANCHOR_END: main

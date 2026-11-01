@@ -1,0 +1,10 @@
+[fly, heron, duck]
+[algae, snail]
+yes
+yes
+no
+yes
+[chain eaten fly frog, chain eaten fly fish, chain eaten fly heron, 
+ chain eaten fly heron, chain eaten fly otter]
+[keep [frog, fly, fish] swims [frog, fish], keep [frog, fly, fish] swims [frog], 
+ keep [frog, fly, fish] swims [fish], keep [frog, fly, fish] swims []]

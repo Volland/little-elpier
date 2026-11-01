@@ -1,0 +1,81 @@
+% Solutions to the Chapter 8 exercises.
+accumulate pond.
+
+pred above o:critter, o:critter.
+above X Y :- eats X Y.
+above X Z :- eats X Y, above Y Z.
+
+kind expr type.
+type num int -> expr.
+type add expr -> expr -> expr.
+type let expr -> (expr -> expr) -> expr.
+
+% ANCHOR: ex1
+% Exercise 8.1: the otter, with and without frogs on its menu.
+% Without: fish, fly, snail, algae. With: frog comes first, and
+% it is the only new critter; the otter was already above all
+% that the frog eats, through the fish. (Some critters appear
+% twice because there are two paths down to them.)
+pred under i:critter, o:list critter.
+under X L :-
+  std.findall (above X Y) G,
+  std.map G (g\ y\ g = above X y) L.
+pred ex1.
+ex1 :-
+  under otter A, print A,
+  (eats otter frog => under otter B), print B.
+% ANCHOR_END: ex1
+
+% ANCHOR: ex2
+% Exercise 8.2: (a) "every critter that eats snails is above
+% algae": yes, through the snail. (b) "every critter is above
+% algae": no, nothing is known about a brand-new critter.
+% (c) "every critter the heron eats is below the heron": yes,
+% the first clause of `above` uses the supposed fact.
+pred yesno i:string, i:prop.
+yesno S G :- (G, print S "yes" ; print S "no").
+pred ex2.
+ex2 :-
+  yesno "a:" (pi x\ eats x snail => above x algae),
+  yesno "b:" (pi x\ above x algae),
+  yesno "c:" (pi x\ eats heron x => above heron x).
+% ANCHOR_END: ex2
+
+% ANCHOR: ex3
+% Exercise 8.3: how many times are bound names used?
+pred uses i:expr, o:int.
+uses (num _) 0.
+uses (add A B) N :- uses A NA, uses B NB, N is NA + NB.
+uses (let E B) N :-
+  uses E NE,
+  (pi x\ uses x 1 => uses (B x) NB),
+  N is NE + NB.
+pred ex3.
+ex3 :-
+  uses (let (num 1) (x\ num 5)) A, print A,
+  uses (let (num 2) (x\ add x x)) B, print B,
+  uses (let (num 2) (x\ let (add x x) (y\ add y x))) C,
+  print C.
+% ANCHOR_END: ex3
+
+% ANCHOR: ex4
+% Exercise 8.4: evaluate without substituting. A fact says
+% what the fresh name is worth, for the body only.
+pred ev i:expr, o:int.
+ev (num N) N.
+ev (add A B) N :- ev A NA, ev B NB, N is NA + NB.
+ev (let E B) N :- ev E V, (pi x\ ev x V => ev (B x) N).
+
+% Chapter 7's way, for comparison: put E into the body.
+pred eval i:expr, o:int.
+eval (num N) N.
+eval (add A B) N :- eval A NA, eval B NB, N is NA + NB.
+eval (let E B) N :- eval (B E) N.
+
+pred ex4.
+ex4 :-
+  T = let (num 2) (x\ let (add x x) (y\ add y x)),
+  ev T A, eval T B, print A B.
+% ANCHOR_END: ex4
+
+main :- ex1, ex2, ex3, ex4.

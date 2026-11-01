@@ -1,0 +1,12 @@
+% Chapter 5: well typed, and wrong.
+accumulate pond.
+
+% ANCHOR: wrong
+eats fly heron.
+% ANCHOR_END: wrong
+
+% ANCHOR: main
+main :-
+  eats fly heron,
+  print "the fly eats the heron".
+% ANCHOR_END: main

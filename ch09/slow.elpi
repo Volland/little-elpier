@@ -1,0 +1,24 @@
+% expect: fail
+% fuel: 100000
+% Chapter 9: term search with `if` before `lam`. The search
+% dives into `if` forever and runs out of fuel.
+accumulate check.
+
+% ANCHOR: slow
+pred slow o:tm, o:ty.
+slow (num _) nat.
+slow tt bool.
+slow ff bool.
+slow (add M N) nat :-
+  slow M nat, slow N nat.
+slow (if C M N) A :-
+  slow C bool, slow M A, slow N A.
+slow (lam F) (arr A B) :-
+  pi x\ slow x A => slow (F x) B.
+slow (app M N) B :-
+  slow M (arr A B), slow N A.
+% ANCHOR_END: slow
+
+% ANCHOR: main
+main :- slow E (arr nat nat), print E.
+% ANCHOR_END: main

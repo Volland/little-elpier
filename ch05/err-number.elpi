@@ -1,0 +1,7 @@
+% expect: fail
+% Chapter 5: a number where a critter belongs.
+accumulate pond.
+
+% ANCHOR: bad
+eats 3 fly.
+% ANCHOR_END: bad
