@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Little Elpier</title>
+<meta name="description" content="A logic program is a list of things that are true, and running it is asking a question. This small book teaches that idea from zero, in the question-and-answer style of The Little Schemer: short questions on the left, short answers on the right, one idea at a time.">
+<meta property="og:title" content="The Little Elpier: Higher-Order Logic, Types and λProlog, One Question at a Time">
+<meta property="og:description" content="A logic program is a list of things that are true, and running it is asking a question. This small book teaches that idea from zero, in the question-and-answer style of The Little Schemer: short questions on the left, short answers on the right, one idea at a time.">
+<meta property="og:url" content="https://little-elpier.org/">
+<meta property="og:image" content="https://little-elpier.org/assets/cover-720.jpg?v=08f959c308">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E8480A">
+<link rel="icon" href="assets/icon.svg?v=c30a5930b8" type="image/svg+xml">
+<link rel="preload" href="fonts/LibertinusSerif-Regular.woff2?v=f799258a57" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css?v=b98a7b4b61">
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="./">Little <span>Elpier</span></a>
+<nav><a href="#get">Get it</a><a href="#gate">Neurosymbolic</a><a href="#sample">Sample</a><a href="#contents">Contents</a><a href="#code">Code</a><a href="https://volland.github.io/lean-elpi/">lean-elpi</a></nav>
+</div></header>
+<main>
+
+<section class="hero wrap">
+  <div class="hero-text">
+    <p class="kicker">A little book of higher-order logic</p>
+    <h1><span class="the">The</span> <span class="little">Little</span> <span class="elpier">Elpier</span></h1>
+    <p class="sub">Higher-Order Logic, Types and λProlog, One Question at a Time</p>
+    <p class="by">Volodymyr Pavlyshyn</p>
+    <p class="lead">Most programs are recipes. Do this, then this, then loop until that. A logic program is something else: a list of things that are true, and a way to ask what follows from them. You do not tell the computer how to find the answer. You tell it what you know, and you ask.</p>
+    <div class="btns">
+      <a class="btn" href="https://leanpub.com/littleelpier">Buy on Leanpub</a>
+      <a class="btn alt" href="https://www.amazon.de/dp/B0HQ13QZ2H">Amazon</a>
+      <a class="btn alt" href="#get">Read it free</a>
+    </div>
+    <p class="open-note"><span class="badge">Open access</span> The PDF and EPUB are free
+    under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Read it, share it, and buy a copy if it helps you.</p>
+  </div>
+  <a class="cover" href="https://leanpub.com/littleelpier"><img src="assets/cover-360.jpg?v=23556e2afc"
+    srcset="assets/cover-360.jpg?v=23556e2afc 360w, assets/cover-720.jpg?v=08f959c308 720w" sizes="(max-width: 760px) 280px, 360px"
+    width="360" height="540" alt="The cover of The Little Elpier: a robot in a laurel wreath reads a book marked λ, among scrolls of λ-terms, a Prolog rule and term trees. Powered by Lean-Elpi."></a>
+</section>
+
+<section class="about wrap narrow">
+<p><b>What eats a fly? Ask the pond.</b></p>
+<p>A logic program is a list of things that are true, and running it is asking a question. This small book teaches that idea from zero, in the question-and-answer style of <i>The Little Schemer</i>: short questions on the left, short answers on the right, one idea at a time.</p>
+<ul>
+<li>Facts, questions, rules and recursion, with a pond of eight critters and who eats whom.</li>
+<li>What the engine really does: unification and search, drawn as trees.</li>
+<li>Lists, Peano numbers, and relations that run backwards.</li>
+<li>Types, predicates passed as values, and lambdas.</li>
+<li>The two ideas that make λProlog higher-order: <i>pi</i> and <i>=&gt;</i>.</li>
+<li>A finale: a type checker for a little language in seven clauses, which also infers types.</li>
+</ul>
+<p>Every chapter ends with graded exercises, with room to write in the paperback, and a dot-grid notes page for drawing search trees. Every example runs on lean-elpi, from Python with one <i>pip install</i>, and every solution is in the book.</p>
+<p>Written for students who have never taken a logic course. No mathematics or prior Prolog needed.</p>
+<p>9 chapters, 541 questions, 11 Maxims, and four graded exercises at
+the end of every chapter, each with a worked solution that runs.</p>
+</section>
+
+<section id="gate" class="gate wrap narrow">
+  <h2>A gate to neurosymbolic AI</h2>
+  <p>Neurosymbolic AI joins two kinds of system. A neural model, such as a large language
+  model, is fluent and fast, and it guesses. A symbolic system reasons from facts and rules:
+  it can say why an answer follows, and it can say no. Together, the model proposes and the
+  logic checks.</p>
+  <p>The symbolic half is a logic program, and this book teaches it from zero. Each idea in
+  it is one that half is built from:</p>
+  <ul class="gate-list">
+    <li><strong>Facts and rules</strong> <span class="meta">Chapters 1–2</span><br>Knowledge
+    written down, so an answer comes from what is stated, not from a guess.</li>
+    <li><strong>Unification and search</strong> <span class="meta">Chapters 2–3</span><br>How
+    an answer is derived, step by step, so it can be explained.</li>
+    <li><strong>Types</strong> <span class="meta">Chapter 5</span><br>A checker that turns
+    away ill-formed input before it runs, such as a malformed fact a model proposes.</li>
+    <li><strong>Predicates as values and lambdas</strong> <span class="meta">Chapters 6–7</span><br>Rules
+    and queries as data that a program can build and pass around.</li>
+    <li><strong><code>pi</code> and <code>=&gt;</code></strong> <span class="meta">Chapter 8</span><br>Reasoning
+    under assumptions, "suppose this were true", without changing what is known.</li>
+    <li><strong>A type checker as a logic program</strong> <span class="meta">Chapter 9</span><br>The
+    shape of a verifier: a set of rules that says yes or no, and runs both ways.</li>
+  </ul>
+  <p>The book itself stays in the pond: there is no language model in it, and it asks for
+  nothing but some programming. It is the gate. Beyond it are lean-elpi's chapter on
+  <a href="https://volland.github.io/lean-elpi/book/neuro-symbolic/">higher-order logic and neuro-symbolic systems</a>,
+  and the author's <a href="https://pavlyshyn.me/books">other books</a>: <em>Logic for Agents</em> gives an AI
+  agent a logic layer that checks what a language model proposes, and <em>Bulletproof
+  Knowledge</em> goes into Lean 4, where facts come with proofs.</p>
+</section>
+
+<section id="get" class="buy wrap narrow">
+  <h2>Free to read. Worth buying.</h2>
+  <p><em>The Little Elpier</em> is open access. The PDF and the EPUB are free under the
+  <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a> license: read them, share them,
+  print them for a class, as long as you credit the author.</p>
+  <p>A book like this takes months to write. If it helps you, please buy a copy. It pays for
+  the work, and for the next book.</p>
+  <div class="ways">
+    <div class="way support">
+      <h3>Buy it and support the work</h3>
+      <p><strong>Leanpub:</strong> PDF and EPUB, with every future update free.<br>
+      <strong>Amazon:</strong> the Kindle edition.</p>
+      <div class="btns">
+        <a class="btn" href="https://leanpub.com/littleelpier">Buy on Leanpub</a>
+        <a class="btn alt" href="https://www.amazon.de/dp/B0HQ13QZ2H">Amazon</a>
+      </div>
+    </div>
+    <div class="way free">
+      <h3>Read it free</h3>
+      <p>The latest edition, open access under CC BY 4.0. Archived on
+      <a href="https://zenodo.org/records/23864702">Zenodo</a>; older editions are under
+      <a href="https://github.com/Volland/little-elpier/releases">releases</a>.</p>
+      <div class="btns">
+        <a class="btn alt" href="https://github.com/Volland/little-elpier/releases/latest/download/little-elpier.pdf">Download PDF</a>
+        <a class="btn alt" href="https://github.com/Volland/little-elpier/releases/latest/download/little-elpier.epub">Download EPUB</a>
+      </div>
+    </div>
+  </div>
+  <p class="cite"><span class="meta">Cite it as</span><br>Pavlyshyn, V. (2026).
+  <em>The Little Elpier: Higher-Order Logic, Types and λProlog, One Question at a Time</em>. Zenodo.
+  <a href="https://doi.org/10.5281/zenodo.23864702">https://doi.org/10.5281/zenodo.23864702</a></p>
+</section>
+
+<section id="sample" class="sample wrap narrow">
+  <h2>Read it the way the book reads</h2>
+  <p>Each page is two columns: a question on the left, its answer on the right. Cover the
+  answers, try each question, then look. Here are two sections of Chapter&nbsp;1.</p>
+  <button class="btn alt cover-toggle" type="button" aria-pressed="false">Cover the answers</button>
+  <div class="frames">
+<h3>Facts</h3>
+<div class="frame"><div class="q"><p>What is <code>eats frog fly</code>?</p></div><div class="a"><p>A fact. It says that the frog eats flies.</p></div></div>
+<div class="frame"><div class="q"><p>How do we know it is a fact?</p></div><div class="a"><p>It ends with a dot and has no conditions. It does not say "if" anything. It is true because the file says so.</p></div></div>
+<div class="frame"><div class="q"><p>What are <code>frog</code> and <code>fly</code>?</p></div><div class="a"><p>Constants. Each one is the name of one thing in the pond.</p></div></div>
+<div class="frame"><div class="q"><p>And <code>eats</code>?</p></div><div class="a"><p>A predicate: the name of a relation between things. <code>eats</code> relates an eater to its food.</p></div></div>
+<div class="frame"><div class="q"><p>Is <code>eats fly frog</code> the same fact as <code>eats frog fly</code>?</p></div><div class="a"><p>No. Order matters. The first place is the eater, the second is the food. <code>eats fly frog</code> would say the fly eats the frog, which would be news to the frog.</p></div></div>
+<div class="frame"><div class="q"><p>Is <code>eats fly frog</code> in the pond?</p></div><div class="a"><p>No.</p></div></div>
+<div class="frame"><div class="q"><p>Where are the parentheses?</p></div><div class="a"><p>There are none. Many languages would write <code>eats(frog, fly)</code>. λProlog writes the predicate, then its arguments, separated by spaces. Parentheses are only for grouping, as we will see in Chapter 3.</p></div></div>
+<div class="frame"><div class="q"><p>How many arguments does <code>eats</code> take?</p></div><div class="a"><p>Two.</p></div></div>
+<div class="frame"><div class="q"><p>Are there predicates with one argument?</p></div><div class="a"><p>Yes:</p>
+<pre class="lang-elpi"><code><span class="kw">pred</span> swims o:critter.
+swims frog.
+swims fish.
+swims duck.
+swims otter.
+
+<span class="kw">pred</span> flies o:critter.
+flies fly.
+flies heron.
+flies duck.
+
+<span class="kw">pred</span> plant o:critter.
+plant algae.</code></pre>
+<p>A one-argument predicate says something about one thing: the frog swims, the heron flies.</p></div></div>
+<div class="frame"><div class="q"><p>How many <code>eats</code> facts are in the pond?</p></div><div class="a"><p>Eleven. Here they are as a picture.</p></div></div>
+<div class="prose"><figure><img src="diagrams/ch01-pond-web.svg?v=b5b372e53e" alt="The pond&#x27;s food web. An arrow from X to Y is the fact eats X Y; the arrow points at the food." loading="lazy"><figcaption>The pond's food web. An arrow from X to Y is the fact <code>eats X Y</code>; the arrow points at the food.</figcaption></figure></div>
+<div class="frame"><div class="q"><p>What eats nothing?</p></div><div class="a"><p>The algae. No fact starts with <code>eats algae</code>.</p></div></div>
+<div class="frame"><div class="q"><p>What does nothing eat?</p></div><div class="a"><p>The heron and the otter. No fact ends with <code>heron</code> or <code>otter</code>. They are at the top.</p></div></div>
+<div class="prose"><p>The file is a list of things we say are true. That is all a fact is. Nothing in the program checks that frogs really eat flies; the program believes the file. If we wrote <code>eats fly heron</code>, it would believe that too.</p></div>
+<h3>Questions</h3>
+<div class="frame"><div class="q"><p>How do we ask a question?</p></div><div class="a"><p>Start <code>lean-elpi</code> without <code>-test</code>. The file <code>ask.elpi</code> only loads the pond:</p>
+<pre class="lang-bash"><code>lean-elpi ask.elpi -I ../lib</code></pre>
+<p>It prints <code>?-</code> and waits. Type a question, end it with a dot, and press Enter.</p></div></div>
+<div class="frame"><div class="q"><p>What do we get if we ask <code>eats frog fly.</code>?</p></div><div class="a"><p>We typed the question, then <code>n</code>:</p>
+<pre class="lang-text"><code>eats frog fly.
+n</code></pre>
+<p>and <code>lean-elpi</code> answered:</p>
+<pre class="lang-text"><code>?- Success:
+More? (y/N) ?-</code></pre>
+<p><code>Success</code> means yes: the pond says so.</p></div></div>
+<div class="frame"><div class="q"><p>What is <code>More? (y/N)</code>?</p></div><div class="a"><p>The engine offering to look for another answer. For a yes-or-no question there is nothing more to find, so we said <code>n</code>, and it gave us a new <code>?-</code>.</p></div></div>
+<div class="frame"><div class="q"><p>What do we get if we ask <code>eats otter algae.</code>?</p></div><div class="a"><pre class="lang-text"><code>?- Failure
+?-</code></pre></div></div>
+<div class="frame"><div class="q"><p>Does that mean otters never eat algae?</p></div><div class="a"><p>No. It means the pond does not say they do. <code>Failure</code> is "I cannot show this from the facts I have", not "this is false in the real world". In our pond the two happen to agree, because we wrote down everything we know.</p></div></div>
+<aside class="maxim"><p><strong>The First Maxim</strong></p>
+<p>A fact says what is true. A question asks whether it follows.</p></aside>
+  </div>
+</section>
+
+<section id="contents" class="contents wrap narrow">
+  <h2>Contents</h2>
+  <p class="meta">Preface · Before You Begin</p>
+  <ol class="chapters"><li><span class="num">1</span><div><h3>Facts and Questions</h3><p>There is a small pond. Algae grow in it. Snails and flies eat the algae. Frogs and fish eat the snails and the flies, a duck eats whatever it can reach, and a heron and an otter stand at the top and eat the frogs and the fish.</p><p class="meta">45 questions · the First Maxim and the Second Maxim</p></div></li><li><span class="num">2</span><div><h3>Rules and Recursion</h3><p>Is the heron above the algae? Look at the food web from Chapter 1 and you will say yes at once: the heron eats the frog, the frog eats the fly, and the fly eats the algae. But no line in the pond says <code>eats heron algae</code>, and the engine knows only what the lines say. Ask it, and it answers <code>Failure</code>.</p><p class="meta">67 questions · the Third Maxim and the Fourth Maxim</p></div></li><li><span class="num">3</span><div><h3>Terms and Unification</h3><p>The frog has been busy. It ate three flies this morning, and the pond wants to remember how many. Chapter 1's facts can say <em>that</em> the frog eats flies. They cannot say how many.</p><p class="meta">56 questions · the Fifth Maxim</p></div></li><li><span class="num">4</span><div><h3>Lists</h3><p>The heron eats frogs and fish. Ask the pond what the heron eats and it answers twice, one critter at a time. But a menu is one thing: a card with two names on it. We want to hold both names at once, count them, turn them around, and ask questions about the card itself.</p><p class="meta">69 questions · the Sixth Maxim</p></div></li><li><span class="num">5</span><div><h3>Types</h3><p>Someone at the pond wants to note that the frog had three flies for lunch. They add a line to the file: <code>eats 3 fly.</code> The pond refuses to load. Not one question gets an answer. <code>lean-elpi</code> reads the line, says what is wrong with it, and stops.</p><p class="meta">68 questions · the Seventh Maxim</p></div></li><li><span class="num">6</span><div><h3>Predicates as Values</h3><p>In Chapter 2 we taught the pond to answer "Is the heron above the algae?" with two clauses. Now a stream runs through the pond, and the critters have ages. "Is the spring upstream of the sea?" "Is the otter older than the fish?" Each question wants the same two clauses again, with one name changed.</p><p class="meta">56 questions · the Eighth Maxim</p></div></li><li><span class="num">7</span><div><h3>Lambdas</h3><p>In Chapter 6 we handed <code>swims</code> and <code>eats heron</code> to <code>std.filter</code>. Now we want the critters that eat flies. <code>eats heron</code> fixes the first place, and we need the second place fixed. We could write <code>flyeater X :- eats X fly.</code> and use it once. A name for something used once is clutter.</p><p class="meta">54 questions · the Ninth Maxim</p></div></li><li><span class="num">8</span><div><h3>Pi and Implication</h3><p>The heron is above the algae, and the frog is above the flies. The duck is not above the flies. It eats snails and algae, and neither of those eats a fly.</p><p class="meta">61 questions · the Tenth Maxim</p></div></li><li><span class="num">9</span><div><h3>The Little Type Checker</h3><p>Here is a small expression: <code>add tt (num 1)</code>. It asks us to add <em>true</em> to the number one. That is nonsense, and most of us see it at once. But who decides that it is nonsense, and how?</p><p class="meta">65 questions · the Eleventh Maxim</p></div></li></ol>
+  <p class="meta">The Maxims · Cheat Sheet · Solutions · Where to Go Next</p>
+</section>
+
+<section id="maxims" class="maxims wrap">
+  <h2>The eleven Maxims</h2>
+  <p class="narrow">Short rules, each earned by the questions of one chapter.</p>
+  <ol><li><span class="label">The First Maxim</span><p>A fact says what is true. A question asks whether it follows.</p><span class="meta">Chapter 1</span></li><li><span class="label">The Second Maxim</span><p>A capital letter is a hole. The answer fills the holes.</p><span class="meta">Chapter 1</span></li><li><span class="label">The Third Maxim</span><p>Read <code>:-</code> as "if" and the comma as "and". Two clauses mean "or".</p><span class="meta">Chapter 2</span></li><li><span class="label">The Fourth Maxim</span><p>Every recursion needs a way out, and every step must move toward it.</p><span class="meta">Chapter 2</span></li><li><span class="label">The Fifth Maxim</span><p>Unification makes two terms the same, or it fails. There is no halfway.</p><span class="meta">Chapter 3</span></li><li><span class="label">The Sixth Maxim</span><p>A relation has no inputs and outputs until you ask it something. Ask it backwards.</p><span class="meta">Chapter 4</span></li><li><span class="label">The Seventh Maxim</span><p>Give every name a type. The checker reads the program before it runs.</p><span class="meta">Chapter 5</span></li><li><span class="label">The Eighth Maxim</span><p>A predicate is a value. Pass it where you would pass a number.</p><span class="meta">Chapter 6</span></li><li><span class="label">The Ninth Maxim</span><p>A lambda is a term with a hole in it. Applying it fills the hole.</p><span class="meta">Chapter 7</span></li><li><span class="label">The Tenth Maxim</span><p><code>pi</code> makes a name nobody has used. <code>=&gt;</code> adds a fact for one goal only.</p><span class="meta">Chapter 8</span></li><li><span class="label">The Eleventh Maxim</span><p>A typing rule is a clause. A type checker is a logic program, and it runs both ways.</p><span class="meta">Chapter 9</span></li></ol>
+</section>
+
+<section id="code" class="code wrap narrow">
+  <h2>Get the code</h2>
+  <p>Every program in the book comes from the
+  <a href="https://github.com/Volland/little-elpier">companion repository</a>, and every output printed in the book
+  is a golden file there that a test checks. It runs on macOS, Linux and Windows with WSL.</p>
+<pre class="lang-bash"><code>git clone https://github.com/Volland/little-elpier
+cd little-elpier</code></pre>
+  <div class="setups">
+    <div><h3>Python only</h3><p>Python 3.10 or later. The <code>leanelpi</code> package
+    carries its own copy of the engine, so there is nothing to compile.</p>
+<pre class="lang-bash"><code>python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+cd ch01
+elpier hello.elpi -I ../lib -test</code></pre></div>
+    <div><h3>Docker</h3><p>Nothing to install but Docker. The image has
+    <code>lean-elpi</code> and <code>elpier</code> in it.</p>
+<pre class="lang-bash"><code>docker build -t little-elpier .
+docker run --rm -it \
+  -v "$PWD":/book little-elpier</code></pre></div>
+    <div><h3>From source</h3><p>If you already use Lean 4, build
+    <a href="https://github.com/Volland/lean-elpi">lean-elpi</a> v0.4.1 with <code>lake build</code> and put
+    <code>lean-elpi</code> on your <code>PATH</code>.</p></div>
+  </div>
+</section>
+
+<section id="engine" class="engine wrap narrow">
+  <h2>Runs on lean-elpi</h2>
+  <p>Every example runs on <a href="https://volland.github.io/lean-elpi/">lean-elpi</a>, an implementation of the
+  ELPI dialect of λProlog written in Lean 4. It runs as a command-line program and as a
+  Python package, so you do not need Lean to read this book. When you finish the pond,
+  its site goes further: Python, Node.js and Rust bindings, tactics written in λProlog,
+  and proof search whose results Lean's kernel checks.</p>
+  <ul class="links">
+    <li><a href="https://volland.github.io/lean-elpi/">lean-elpi documentation and book</a></li>
+    <li><a href="https://github.com/Volland/lean-elpi">lean-elpi on GitHub</a></li>
+    <li><a href="https://pypi.org/project/leanelpi/"><code>pip install leanelpi</code></a></li>
+  </ul>
+</section>
+
+</main>
+<footer><div class="wrap">
+<p>© 2026 Volodymyr Pavlyshyn. The book is open access under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; the
+<a href="https://github.com/Volland/little-elpier">companion code</a> is Apache-2.0.
+<a href="https://leanpub.com/littleelpier">Leanpub</a> · <a href="https://www.amazon.de/dp/B0HQ13QZ2H">Amazon</a> ·
+<a href="https://github.com/Volland/little-elpier/releases/latest/download/little-elpier.pdf">PDF</a> · <a href="https://github.com/Volland/little-elpier/releases/latest/download/little-elpier.epub">EPUB</a> ·
+DOI <a href="https://doi.org/10.5281/zenodo.23864702">10.5281/zenodo.23864702</a></p>
+<p>Set in Ultra, Libertinus Serif, Source Sans 3 and JuliaMono (open font licenses).
+<a href="https://pavlyshyn.me/impressum">Impressum</a> ·
+<a href="https://pavlyshyn.me/datenschutz">Datenschutz</a> ·
+<a href="https://pavlyshyn.me/agb">AGB</a></p>
+</div></footer>
+<script src="assets/site.js?v=79794abe5a"></script>
+</body>
+</html>
