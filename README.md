@@ -5,7 +5,7 @@ by Volodymyr Pavlyshyn. Every program in the book is cut from this repository, a
 output printed in the book is a golden file here that the test checks.
 The book: [Leanpub](https://leanpub.com/littleelpier) (PDF, EPUB) ·
 [Amazon](https://www.amazon.de/dp/B0HQ13QZ2H) (Kindle) ·
-[site](https://volland.github.io/little-elpier/) ·
+[site](https://little-elpier.org/) ·
 DOI [10.5281/zenodo.23864702](https://doi.org/10.5281/zenodo.23864702).
 The book is open access under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/):
 download the [PDF](https://github.com/Volland/little-elpier/releases/latest/download/little-elpier.pdf) or the
