@@ -7,8 +7,10 @@ The book: [Leanpub](https://leanpub.com/littleelpier) (PDF, EPUB) ·
 [Amazon](https://www.amazon.de/dp/B0HQ13QZ2H) (Kindle) ·
 [site](https://volland.github.io/little-elpier/) ·
 DOI [10.5281/zenodo.23864702](https://doi.org/10.5281/zenodo.23864702).
-Download the latest edition: [PDF](https://github.com/Volland/little-elpier/releases/latest/download/little-elpier.pdf) ·
-[EPUB](https://github.com/Volland/little-elpier/releases/latest/download/little-elpier.epub).
+The book is open access under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/):
+download the [PDF](https://github.com/Volland/little-elpier/releases/latest/download/little-elpier.pdf) or the
+[EPUB](https://github.com/Volland/little-elpier/releases/latest/download/little-elpier.epub) free. If it helps you,
+please buy a copy on Leanpub or Amazon: it pays for the work, and for the next book.
 
 | Path | What |
 |---|---|
