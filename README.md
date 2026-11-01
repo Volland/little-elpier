@@ -3,7 +3,10 @@
 Code for *The Little Elpier: Higher-Order Logic, Types and λProlog, One Question at a Time*
 by Volodymyr Pavlyshyn. Every program in the book is cut from this repository, and every
 output printed in the book is a golden file here that the test checks.
-The book's site: <https://volland.github.io/little-elpier/>.
+The book: [Leanpub](https://leanpub.com/littleelpier) (PDF, EPUB) ·
+[Amazon](https://www.amazon.de/dp/B0HQ13QZ2H) (Kindle) ·
+[site](https://volland.github.io/little-elpier/) ·
+DOI [10.5281/zenodo.23864702](https://doi.org/10.5281/zenodo.23864702).
 
 | Path | What |
 |---|---|
